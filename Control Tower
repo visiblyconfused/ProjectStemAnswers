@@ -37,7 +37,6 @@ public class Assignment2
     System.out.println("\nInitial Distances:");
     
     
-    //forgot spaces after is
     System.out.println("The distance between Airplane 1 and Airplane 2 is " + air1.distTo(air2) + " miles.");
     System.out.println("The distance between Airplane 1 and Airplane 3 is " + air1.distTo(air3) + " miles.");
     System.out.println("The distance between Airplane 2 and Airplane 3 is " + air2.distTo(air3) + " miles.");
@@ -89,5 +88,3 @@ public class Assignment2
     
    }
 }
-
-    
