@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Assignment3 
+{
+
+  public static void main(String[] args) 
+  {
+    Scanner scan = new Scanner(System.in);
+    
+    System.out.println("Welcome. What is your name?");
+    String name = scan.nextLine();
+    
+    System.out.println("Hello " + name + ". Are you ready to crack the code?");
+    String answer = scan.nextLine();
+    
+    if(answer.toLowerCase().equals("yes"))
+    {
+      System.out.println("\nPHASE 1\nEnter a string:");
+      String str1 = scan.nextLine();
+      
+      if(str1.length() == 3)
+      {
+        System.out.println("Correct!\n");
+        System.out.println("PHASE 2\nEnter a number:");
+        int num = scan.nextInt();
+ 
+        if(num == 19 || num >= 35 && num < 78)
+        {
+          System.out.println("Correct!\n");
+          System.out.println("PHASE 3\nEnter a number:");
+          int num2 = scan.nextInt();
+          
+          if(((num2 > 0 && Math.abs(num2) == num2) && (num2%2 == 0)) || (num2%10 == 1))
+            System.out.print("Correct!\nYou have cracked the code!");
+          else
+           System.out.print("Sorry, that was incorrect!\nBetter luck next time!");
+        }
+        else
+          System.out.print("Sorry, that was incorrect!\nBetter luck next time!");
+      }
+      else
+        System.out.print("Sorry, that was incorrect!\nBetter luck next time!");
+
+    }
+      
+  }
+
+}
