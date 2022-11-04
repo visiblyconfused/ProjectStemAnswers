@@ -1,0 +1,80 @@
+/* Assignment 1 - Calculating Grades */
+import java.util.Scanner;
+
+class Assignment1 
+{
+  public static void main(String[] args) 
+  {
+
+    Scanner scan = new Scanner(System.in);
+    
+    String courseName;
+    int weeklyTime;
+    int hours;
+    int minutes;
+    
+    int hw1;
+    int hw2;
+    int hw3;
+    int hw4;
+    double avgHW;
+    double weightedHW;
+    
+    double quiz1;
+    double quiz2;
+    double avgQuiz;
+    double weightedQuiz;
+    
+    double finalexam;
+    double weightedfinal;
+    
+    double overallgrade;
+    
+    System.out.println("Please enter the course name.");
+    courseName = scan.nextLine();
+    
+    System.out.println("Please enter the average time spent in a week for this course in minutes.");
+    weeklyTime = scan.nextInt();
+    hours = weeklyTime/60;
+    minutes = weeklyTime%60;
+    
+    
+    System.out.println("Please enter the homework grades for this course.");
+    hw1 = scan.nextInt();
+    hw2 = scan.nextInt();
+    hw3 = scan.nextInt();
+    hw4 = scan.nextInt();
+    
+    avgHW = (float)(hw1 + hw2 + hw3 + hw4)/4; 
+    
+    System.out.println("Please enter the quiz grades for this course.");
+    
+    quiz1 = scan.nextDouble();
+    quiz2 = scan.nextDouble();
+    
+    avgQuiz = (quiz1 + quiz2)/2;
+    
+    System.out.println("Please enter the final exam grade for this course.");
+    
+    finalexam = scan.nextDouble();
+
+    
+    weightedHW = (avgHW*0.35); 
+    weightedQuiz = (avgQuiz*0.15);
+    weightedfinal = (finalexam*0.5);
+    
+    
+    overallgrade = weightedHW + weightedQuiz + weightedfinal;
+    overallgrade = (int)(overallgrade + .5)
+    
+    System.out.println("Course name: " + courseName);
+    System.out.println("Weekly time spent: " + hours + "h" + minutes);
+    System.out.println("Average homework grade: " + avgHW);
+    System.out.println("Average quiz grade: " + avgQuiz);
+    System.out.println("Final exam grade: " + finalexam);
+    System.out.println("Overall grade: " + (int)overallgrade);
+    
+
+    
+  }
+}
