@@ -1,0 +1,93 @@
+/* Assignment 2 - Control Tower */
+/* Class name - must be "Assignment2" in order to run */
+import java.util.Scanner;
+import assignment2.Airplane;
+
+public class Assignment2
+{
+  public static void main(String[] args)
+  {
+   
+    Scanner scan = new Scanner(System.in);
+    Airplane air1 = new Airplane();
+    Airplane air2 = new Airplane("AAA02", 15.8,128,30000);
+    String cs; //callsign
+    Double dist; //distance 
+    int dir; //direction
+    int alt3; //altitude of airplane 3
+    
+    
+    System.out.println("Enter the details of the third airplane (call-sign, distance, bearing and altitude):");
+    cs = scan.nextLine();
+    cs = cs.toUpperCase();
+    dist = scan.nextDouble();
+    dir = scan.nextInt();
+    alt3 = scan.nextInt();
+    
+    Airplane air3 = new Airplane(cs, dist, dir, alt3);
+    
+    //Initial Positions 
+    System.out.println("\nInitial Positions:");
+    
+    System.out.println("\"Airplane 1\": " + air1);
+    System.out.println("\"Airplane 2\": " + air2);
+    System.out.println("\"Airplane 3\": " + air3);
+    
+    //Initial Distances 
+    System.out.println("\nInitial Distances:");
+    
+    
+    //forgot spaces after is
+    System.out.println("The distance between Airplane 1 and Airplane 2 is " + air1.distTo(air2) + " miles.");
+    System.out.println("The distance between Airplane 1 and Airplane 3 is " + air1.distTo(air3) + " miles.");
+    System.out.println("The distance between Airplane 2 and Airplane 3 is " + air2.distTo(air3) + " miles.");
+    
+    //Intial Height differences
+    System.out.println("\nInitial Height Differences:");
+    
+    
+    System.out.println("The difference in height between Airplane 1 and Airplane 2 is " + Math.abs(air1.getAlt() - air2.getAlt()) + " feet.");
+    System.out.println("The difference in height between Airplane 1 and Airplane 3 is " + Math.abs(air1.getAlt() - air3.getAlt()) + " feet.");
+    System.out.println("The difference in height between Airplane 2 and Airplane 3 is " + Math.abs(air2.getAlt() - air3.getAlt()) + " feet.");
+    
+    //New Positions 
+    System.out.println("\nNew Positions:");
+    
+    air1.move(air2.distTo(air3), 65);
+    air2.move(8.0,135);
+    air3.move(5.0,55);
+    
+    //This segement, I hate it.
+    air1.gainAlt();
+    air1.gainAlt();
+    air1.gainAlt();
+    air2.loseAlt();
+    air2.loseAlt();
+    air3.loseAlt();
+    air3.loseAlt();
+    air3.loseAlt();
+    air3.loseAlt();
+    /////////
+    
+    System.out.println("\"Airplane 1\": " + air1);
+    System.out.println("\"Airplane 2\": " + air2);
+    System.out.println("\"Airplane 3\": " + air3);
+    
+    //New Distances
+    System.out.println("\nNew Distances:");
+    
+    System.out.println("The distance between Airplane 1 and Airplane 2 is "+ air1.distTo(air2) + " miles.");
+    System.out.println("The distance between Airplane 1 and Airplane 3 is "+ air1.distTo(air3) + " miles.");
+    System.out.println("The distance between Airplane 2 and Airplane 3 is "+ air2.distTo(air3) + " miles.");
+   
+    
+    //New height Differences
+    System.out.println("\nNew Height Differences:");
+    System.out.println("The difference in height between Airplane 1 and Airplane 2 is " + Math.abs(air1.getAlt() - air2.getAlt()) + " feet.");
+    System.out.println("The difference in height between Airplane 1 and Airplane 3 is " + Math.abs(air1.getAlt() - air3.getAlt()) + " feet.");
+    System.out.print("The difference in height between Airplane 2 and Airplane 3 is " + Math.abs(air2.getAlt() - air3.getAlt()) + " feet.");
+    
+   }
+}
+
+    
